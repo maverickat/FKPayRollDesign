@@ -100,5 +100,12 @@ public class DataManipulate{
 		
 		Home.main(null);
 	}
+	public static void RemoveEmp(){
+		System.out.println("\nEmpId: ");
+		int id = inp.nextInt();
+		RemoveEmployee.RemoveEmp(id);
+		Home.main(null);
+		}
+
 }
 

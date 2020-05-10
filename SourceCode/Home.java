@@ -14,6 +14,7 @@ public class Home{
 		System.out.println("\n3\tFor Update Details Related To Employee");
 		System.out.println("\n4\tTo Post A Sale");
 		System.out.println("\n5\tTo Update Details Related To Union");
+		System.out.println("\n6\tfor Removing Employee");
 		System.out.println("\n9\tfor EXIT");
 		try{
 		Scanner inp = new Scanner(System.in);
@@ -31,6 +32,8 @@ public class Home{
 			DataManipulate.PostSale();
 		if(x==5)
 			DataManipulate.Union();
+		if(x==6)
+			DataManipulate.RemoveEmp();
 		if(x==9)
 		System.out.println("THANK YOU :)");
 		}
