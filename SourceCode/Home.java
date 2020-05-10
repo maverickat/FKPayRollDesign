@@ -10,7 +10,8 @@ public class Home{
 		System.out.println("\n\tWelcome To PayRoll\n");
 		System.out.println("\nPress Given Numbers For Different Features:\n");
 		System.out.println("\n1\tfor Adding new Employee");
-		System.out.println("\n2\tfor EXIT");
+		System.out.println("\n2\tGenerate Time Stamp");
+		System.out.println("\n9\tfor EXIT");
 		try{
 		Scanner inp = new Scanner(System.in);
 		int x = inp.nextInt();
@@ -18,6 +19,10 @@ public class Home{
 			DataManipulate.AddEmployee();
 		}
 		if(x==2)
+		{
+			DataManipulate.PostTime();
+		}
+		if(x==9)
 		System.out.println("THANK YOU :)");
 		}
 		catch(Exception e){

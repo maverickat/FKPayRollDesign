@@ -7,9 +7,11 @@ public class EmployeeHour extends Employee{
 		super.Rate = rate;
 		}
 		
-	public void SetBasePay(){
-		//Calculation
-		 BasePay =0;
+	public static double SetBasePay(double hours,double Rate,double BasePay){
+		 BasePay += Rate*hours;
+		 if(hours>8)
+		 BasePay += Rate*(hours-8)*0.5;
+		 return BasePay;
 		}
 		
 	public void SetCommPay(){
