@@ -69,6 +69,8 @@ public class MySqlCon{
 		q = "UPDATE emp SET rate = " + newdet + " where id = " + id;
 		else if(x==3)
 		q = "UPDATE emp SET comm = " + newdet + " where id = " + id;
+		else if(x==4)
+		q = "UPDATE emp SET uni = " + newdet + " where id = " + id;
 		else 
 		return 1;
 		PreparedStatement p = con.prepareStatement(q);
@@ -103,6 +105,30 @@ public class MySqlCon{
 		CommPay = Employee.SetCommPay(sale,rate,CommPay);
 		q = "UPDATE emp SET commpay = " + CommPay + " where id = " + id;
 		p = con.prepareStatement(q);
+		p.execute();
+		con.close();
+		}
+		catch(Exception e){
+		System.out.println(e);
+		return 1;
+		}
+		return 0;
+	}
+	
+	public static int BaseUnion(int id ,String charge){
+	try{
+		Connection con = DriverManager.getConnection(
+		"jdbc:mysql://localhost:3306/info","atif","atif");
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("Select toPay from emp where id =" + id);
+		if(!rs.next())
+		{
+		con.close();
+		return 1;}
+		double toPay = rs.getDouble("toPay");
+		toPay = toPay-Double.parseDouble(charge);
+		String q = "UPDATE emp SET toPay = " + toPay + " where id = " + id;
+		PreparedStatement p = con.prepareStatement(q);
 		p.execute();
 		con.close();
 		}
