@@ -46,5 +46,24 @@ public class DataManipulate{
 		
 		Home.main(null);
 	}
+	
+	public static void Update(){
+		System.out.println("\n1\tfor Method Payment");
+		System.out.println("\n2\tfor Rate");
+		System.out.println("\n3\tfor Commision Rate ");
+		int x = inp.nextInt();
+		System.out.println("\nEmpId: ");
+		int id = inp.nextInt();
+		inp.nextLine();
+		System.out.println("\nNEW DETAILS: ");
+		String newdet = inp.nextLine();
+		x =MySqlCon.Update(x,id,newdet);
+		if(x==0)
+		System.out.println("\nSuccessFull");
+		else
+		System.out.println("\nID Doesn't Exist");
+		
+		Home.main(null);
+	}
 }
 

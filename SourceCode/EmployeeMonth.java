@@ -7,8 +7,7 @@ public class EmployeeMonth extends Employee{
 		}
 
 	public void SetBasePay(){
-		//Calculation
-		 BasePay =0;
+		 BasePay =Rate;
 		}
 		
 	public void SetCommPay(){

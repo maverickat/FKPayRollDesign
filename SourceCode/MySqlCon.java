@@ -52,6 +52,35 @@ public class MySqlCon{
 		}
 		return 0;
 	}
+	public static int Update(int x,int id,String newdet){
+	try{
+		Connection con = DriverManager.getConnection(
+		"jdbc:mysql://localhost:3306/info","atif","atif");
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("Select rate,topay from emp where id =" + id);
+		if(!rs.next())
+		{
+		con.close();
+		return 1;}
+		String q= null;
+		if(x==1)
+		q = "UPDATE emp SET PayMethod = " + newdet + " where id = " + id;
+		else if(x==2)
+		q = "UPDATE emp SET rate = " + newdet + " where id = " + id;
+		else if(x==3)
+		q = "UPDATE emp SET comm = " + newdet + " where id = " + id;
+		else 
+		return 1;
+		PreparedStatement p = con.prepareStatement(q);
+		p.execute();
+		con.close();
+		}
+		catch(Exception e){
+		System.out.println(e);
+		return 1;
+		}
+		return 0;
+	}
 	
 }
 		
