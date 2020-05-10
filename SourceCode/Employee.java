@@ -31,6 +31,11 @@ public abstract class Employee{
 		CommRate = rate;
 		}
 	
+	public static double SetCommPay(double Sale,double CommRate,double CommPay){
+		CommPay += Sale*CommRate ;
+		return CommPay;
+		}
+	
 	public void SetRate(double rate){
 		Rate = rate;
 		}

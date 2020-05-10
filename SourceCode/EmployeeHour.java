@@ -13,11 +13,6 @@ public class EmployeeHour extends Employee{
 		 BasePay += Rate*(hours-8)*0.5;
 		 return BasePay;
 		}
-		
-	public void SetCommPay(){
-		//Calculation
-		CommPay = 0;
-		}
 }
 	
 	

@@ -65,5 +65,19 @@ public class DataManipulate{
 		
 		Home.main(null);
 	}
+	
+	public static void PostSale(){
+		System.out.println("\nEmpId: ");
+		int id = inp.nextInt();
+		System.out.println("\nSales: ");
+		double sale = inp.nextDouble();
+		int x = MySqlCon.PostSale(id,sale);
+		if(x==0)
+		System.out.println("\nSuccessFull");
+		else
+		System.out.println("\nID Doesn't Exist");
+		
+		Home.main(null);
+	}
 }
 
